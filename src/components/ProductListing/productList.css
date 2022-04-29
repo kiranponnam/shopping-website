@@ -1,0 +1,10 @@
+.clothing-heading {
+  width: 100%;
+  font-size: 23px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.image-component-container{
+  margin-top: 80px;
+}

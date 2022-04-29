@@ -1,0 +1,19 @@
+ <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="38.954"
+      height="38.95"
+      viewBox="0 0 38.954 38.95"
+      className="back-button-mobile"
+  
+    >
+      <rect fill="#eaeaea" width="38.954" height="38.95" rx="15" />
+      <path
+       fill= "none"
+       stroke= "#282828"
+       strokeLinecap= "round"
+       strokeLinejoin= "round"
+       strokeWidth= "2px"
+        d="M389.488,180.929l-7.024,7.024,7.081,7.081"
+        transform="translate(-366.738 -168.23)"
+      />
+    </svg>
