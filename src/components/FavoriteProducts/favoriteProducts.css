@@ -1,0 +1,14 @@
+.favorite-icon-container {
+  background-color: rgb(255, 255, 255);
+  height: 30px;
+  width: 30px;
+  margin: 2px;
+  border-radius: 5px;
+}
+.favorite-main-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 345px;
+  justify-content: end;
+}

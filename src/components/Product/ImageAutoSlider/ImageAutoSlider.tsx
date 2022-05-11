@@ -8,6 +8,8 @@ import Image7 from "../../../assests/SliderImages/puma1.png";
 import Image8 from "../../../assests/SliderImages/uspolo1.png";
 import Image9 from "../../../assests/SliderImages/uspolo2.png";
 import "../products.css";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 const ImageAutoSlider = () => {
   const arrayImages = [
@@ -35,6 +37,14 @@ const ImageAutoSlider = () => {
     }, 3000);
     return () => clearInterval(id);
   }, [currIndex]);
+  const nextImgHandler = () => {
+    setCurrIndex((i: any) => (i + 1) % arrayImages.length);
+  };
+  const prevImgHandler = () => {
+    setCurrIndex((i: any) =>
+      i > 0 ? (i - 1) % arrayImages.length : arrayImages.length - 1 - i
+    );
+  };
   const userScreenWidth =
     window.innerWidth ||
     document.documentElement.clientWidth ||
@@ -42,6 +52,16 @@ const ImageAutoSlider = () => {
   return (
     <React.Fragment>
       <div className="image-main-container">
+        {/* <div className="arrows-main-container">
+          <ArrowBackIosIcon
+            style={{ backgroundColor: "#ffff" }}
+            onClick={prevImgHandler}
+          />
+          <ArrowForwardIosIcon
+            style={{ backgroundColor: "#ffff" }}
+            onClick={nextImgHandler}
+          />
+        </div> */}
         <img
           src={arrayImages[currIndex]}
           alt="img"

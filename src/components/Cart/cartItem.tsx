@@ -10,10 +10,12 @@ import AddIcon from "@mui/icons-material/Add";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import "./cart.css";
 import {Link} from "react-router-dom"
+import { FavoriteProducts } from "../FavoriteProducts";
 const CartItem: FC<any> = (props: any) => {
   return (
     <React.Fragment>
       <Card sx={{ maxWidth: 345 }}>
+      <FavoriteProducts product={props?.product}/>
       <Link
         to={{
           pathname: "/products/" + props?.product?.id,

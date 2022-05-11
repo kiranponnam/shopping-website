@@ -41,6 +41,11 @@
 }
 .image-main-container {
   margin: 15px;
+/* 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 }
 .dots-container {
   text-align: center;
@@ -98,4 +103,13 @@
   to {
     opacity: 1;
   }
+}
+.arrows-main-container{
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  position: absolute;
+  width: 90%;
+  align-items: center;
 }

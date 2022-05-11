@@ -12,12 +12,16 @@ import Badge from "@mui/material/Badge";
 import {
   CartListContext,
   getSessionData,
+  WishListContext,
 } from "../Context/productContext";
 import UserDetails from "../UserDetails/UserDetails";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const NavBar: FC<any> = () => {
   const location = useLocation();
   const [cartList] = useContext(CartListContext);
+  const [wishList] = useContext(WishListContext);
   const getTotalItems = (items: any) =>
     items.reduce((acc: any, item: any) => acc + item.amount, 0);
 
@@ -51,6 +55,20 @@ const NavBar: FC<any> = () => {
             {/* <AsyncAutoComplete/> */}
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Link
+                to="/wish-list"
+                className={
+                  location?.pathname === "/wish-list"
+                    ? "headerbtnActive"
+                    : "mainHeaderContainer"
+                }
+              >
+                <Badge badgeContent={getTotalItems(wishList)} color="success">
+                  <FavoriteIcon />
+                </Badge>
+              </Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Link
                 to="/cart"
                 className={
                   location?.pathname === "/cart"
@@ -59,7 +77,7 @@ const NavBar: FC<any> = () => {
                 }
               >
                 <Badge badgeContent={getTotalItems(cartList)} color="success">
-                  Cart
+                  <AddShoppingCartIcon />
                 </Badge>
               </Link>
             </Typography>

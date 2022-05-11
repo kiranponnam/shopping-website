@@ -10,6 +10,7 @@ import { Footer } from "./components/footer/Footer";
 import { OrderPlaced } from "./components/OrderPlaced/OrderPlaced";
 import { ProductDescription } from "./components/Product/ProductDescription";
 import Login from "./components/Login/Login";
+import { WishList } from "./components/WishList";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDescription/>}/>
           <Route path="/orderplaced" element={<OrderPlaced />} />
           <Route path="/login" element={<Login/>}/>
+          <Route path="/wish-list" element={<WishList/>}/>
         </Routes>
         <Footer/>
         <ScrollBottomToTop showBelow={250}/>

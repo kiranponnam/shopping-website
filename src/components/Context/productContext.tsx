@@ -5,6 +5,7 @@ import axios from "axios";
 export const ProductListContext = createContext<any>("");
 export const CartListContext = createContext<any>("");
 export const GlobalLoaderContext = createContext<any>("");
+export const WishListContext = createContext<any>("");
 
 export const getSessionData = () => {
   let session = sessionStorage.getItem("userData");
@@ -29,6 +30,7 @@ export const ProductListProvider: FC<any> = (props: any) => {
   const [productList, setProductList] = useState<any>([]);
   const [cartList, setCartList] = useState<any>([]);
   const [isLoading, setGlobalLoading] = useState<boolean>(false);
+  const [wishList , setWishList] = useState<any>([])
 
   useEffect(() => {
     setGlobalLoading(true);
@@ -47,7 +49,9 @@ export const ProductListProvider: FC<any> = (props: any) => {
       <ProductListContext.Provider value={[productList, setProductList]}>
         <CartListContext.Provider value={[cartList, setCartList]}>
           <GlobalLoaderContext.Provider value={[isLoading, setGlobalLoading]}>
+            <WishListContext.Provider value={[wishList , setWishList]}>
               {props?.children}
+            </WishListContext.Provider>
           </GlobalLoaderContext.Provider>
         </CartListContext.Provider>
       </ProductListContext.Provider>

@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import "./products.css";
 import axios from "axios";
 import Backbtn from "../../assests/backbtn.svg";
+import { FavoriteProducts } from "../FavoriteProducts";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -103,7 +104,7 @@ export const ProductDescription = (props: any) => {
           <Link to="/">
             <img src={Backbtn} alt="img" style={{ marginLeft: "30px" }} />
           </Link>
-          <h4 className="productdesTopContainer" >Product Description</h4>
+          <h4 className="productdesTopContainer">Product Description</h4>
         </div>
         {isloading ? (
           <div className="globalLoaderContainer">
@@ -124,6 +125,9 @@ export const ProductDescription = (props: any) => {
             >
               <div style={{ margin: "auto", width: "80%" }}>
                 {snackBar()}
+                <div style={{ display: "flex", flexDirection: "row-reverse" }}>
+                  <FavoriteProducts product={product} />
+                </div>
                 <img
                   src={product?.image}
                   className="productImageContainer"
@@ -142,10 +146,13 @@ export const ProductDescription = (props: any) => {
               flexDirection={"column"}
               justifyContent={"center"}
             >
-              <h2 style={{margin:'5px'}}>{product?.name}</h2>
+              <h2 style={{ margin: "5px" }}>{product?.name}</h2>
               {/* <h3 className="brand">puma</h3> */}
               <div>
-                <h3  className="amount-sub-container" style={{alignItems:'self-end'}}>
+                <h3
+                  className="amount-sub-container"
+                  style={{ alignItems: "self-end" }}
+                >
                   Price: <CurrencyRupeeIcon fontSize="small" />{" "}
                   {props?.product?.amount
                     ? Calculate(product?.amount, Number(product?.price))
